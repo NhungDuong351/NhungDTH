@@ -31,12 +31,14 @@ public class UI_DangNhap {
         Common.waitForSeconds(1);
     }
 
+    // Chạy tất cả các test UI
     public void test_UI_DangNhap() {
         test_UI_label_1();
         test_UI_label_2();
         test_UI_placeholder_1();
         test_UI_placeholder_2();
         test_UI_text_button();
+        test_UI_text_link();
     }
 
     public void test_UI_label_1() {
@@ -136,6 +138,26 @@ public class UI_DangNhap {
             System.out.println("Test failed: Text button is incorrect");
             System.out.println("Expect:" + expectTextbutton);
             System.out.println("Actual:" + actualTextbutton);
+        }
+    }
+
+    public void test_UI_text_link() {
+        // Tìm phần tử chứa text link mong muốn
+        WebElement textLink = driver.findElement(By.className("loginv2-forgot"));
+
+        // Lấy giá trị thực tế của text link
+        String actualTextlink = textLink.getText();
+
+        // Giá trị mong muốn
+        String expectTextlink = "Quên mật khẩu?";
+
+        // So sánh giá trị thực tế và giá trị mong muốn
+        if (actualTextlink.equals(expectTextlink)) {
+            System.out.println("Test passed: Text link is correct");
+        } else {
+            System.out.println("Test failed: Text link is incorrect");
+            System.out.println("Expect:" + expectTextlink);
+            System.out.println("Actual:" + actualTextlink);
         }
     }
 

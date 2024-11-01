@@ -13,6 +13,7 @@ public class TestNG_DangNhap {
     public void setUp() {
         dangNhap = new DangNhap();
         dangNhap.setUp();
+        dangNhap.dangNhap();
     }
 
     // Kiểm thử việc chuyển hướng đến màn hình đăng nhập
